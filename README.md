@@ -76,3 +76,14 @@ To enhance analytical depth, advanced SQL techniques were implemented:
 - Calculated cumulative revenue to analyze growth trends over time.
 
 These techniques demonstrate deeper analytical capabilities commonly used in production data systems.
+
+## Python Integration
+
+The project integrates Python to extract and process SQL data.
+
+### Key Features
+- MySQL connection using `mysql-connector-python`
+- Data extraction into pandas DataFrames
+- Query execution directly from Python
+
+This enables further data processing and visualization.
