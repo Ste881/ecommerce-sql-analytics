@@ -1,89 +1,126 @@
-# E-commerce Customer Intelligence System (SQL Project)
+#  E-commerce Customer Intelligence System
 
-## Problem Statement
-Modern e-commerce businesses generate large volumes of transactional data, but struggle to extract actionable insights related to customer behavior, revenue trends, and retention.
+##  Overview
+This project builds a complete data analytics pipeline for an e-commerce business using SQL, Python and an interactive dashboard.
 
-## Objective
-To design and implement a SQL-based analytics system that enables:
-- Revenue analysis
-- Customer segmentation
-- Retention tracking
-- Product performance evaluation
+It demonstrates how raw transactional data can be transformed into actionable business insights through structured querying and visualization.
 
-## Tools Used
-- MySQL Workbench
-- SQL (CTEs, Joins, Aggregations)
+---
 
-## Project Structure
-- `schema.sql` → Database schema
-- `data/` → Sample dataset
-- `queries/` → Analytical SQL queries
-- `insights/` → Business insights
+##  Objectives
+- Analyze revenue trends over time
+- Segment customers based on purchasing behavior
+- Evaluate customer retention patterns
+- Identify top-performing products
+- Build an interactive analytics dashboard
 
-## Database Design
+---
 
-The database consists of four core tables:
+##  Tech Stack
+- **MySQL** → Database & analytics
+- **SQL** → Data querying (joins, aggregations, window functions)
+- **Python (pandas)** → Data extraction and processing
+- **Streamlit** → Dashboard visualization
+- **Matplotlib** → Data visualization
 
-- **customers** → Stores user information
-- **products** → Stores product catalog
-- **orders** → Stores order-level transactions
-- **order_items** → Stores item-level details per order
+---
 
-The schema is normalized and uses foreign key constraints to maintain referential integrity.
+##  Project Structure
 
-## Data Generation
 
-Since no public dataset was used, a synthetic dataset was created to simulate real-world e-commerce transactions.
+ecommerce-sql-analytics/
+│
+├── app/
+│ ├── init.py
+│ ├── db_connection.py # Handles MySQL connection
+│ ├── data_loader.py # Executes SQL queries via Python
+│ └── dashboard.py # Streamlit dashboard
+│
+├── data/
+│ └── sample_data.sql # Synthetic dataset
+│
+├── queries/
+│ ├── revenue_analysis.sql
+│ ├── customer_segmentation.sql
+│ ├── retention_analysis.sql
+│ ├── product_performance.sql
+│ ├── cohort_analysis.sql
+│ ├── revenue_ranking.sql
+│ └── running_revenue.sql
+│
+├── insights/
+│ └── business_findings.md # Key insights & recommendations
+│
+├── schema.sql # Database schema
+└── README.md
 
-The dataset includes:
-- Multiple customers with different signup dates
-- Product categories across domains
-- Orders distributed over time
-- Order-item level granularity
 
-This approach ensures controlled experimentation while preserving realistic business scenarios.
+---
 
-## SQL Analysis
+##  Database Schema
 
-The project includes multiple analytical queries to derive business insights:
+The project uses a normalized relational database with four core tables:
+
+- **customers** → Customer details  
+- **products** → Product catalog  
+- **orders** → Order-level transactions  
+- **order_items** → Item-level order details  
+
+---
+
+##  Key Analyses
 
 ### 1. Revenue Analysis
-- Monthly revenue trends were calculated to understand sales growth over time.
+- Monthly revenue trends to track business growth
 
 ### 2. Customer Segmentation (RFM)
-- Customers were segmented based on:
-  - Recency (last purchase)
-  - Frequency (number of orders)
-  - Monetary value (total spend)
+- Recency → Days since last purchase  
+- Frequency → Number of orders  
+- Monetary → Total spending  
 
 ### 3. Retention Analysis
-- Identified repeat customers to evaluate customer loyalty.
+- Identifies repeat customers
 
-### 4. Product Performance
-- Analyzed top-selling products based on quantity sold.
+### 4. Cohort Analysis
+- Tracks customer retention over time
 
-## Advanced SQL Analysis
+### 5. Product Performance
+- Identifies top-selling products
 
-To enhance analytical depth, advanced SQL techniques were implemented:
+### 6. Advanced SQL
+- Window functions (ranking)
+- Running totals
+- Cohort grouping
 
-### Cohort Analysis
-- Tracked customer retention over time by grouping users based on their first purchase month.
+---
 
-### Window Functions
-- Ranked customers based on total spending using SQL window functions.
+##  Key Insights
 
-### Running Totals
-- Calculated cumulative revenue to analyze growth trends over time.
+- A small group of customers contributes disproportionately to revenue
+- Repeat customers drive consistent sales
+- Certain products dominate sales volume
+- Revenue shows steady cumulative growth over time
+- Customer retention varies across cohorts
 
-These techniques demonstrate deeper analytical capabilities commonly used in production data systems.
+---
 
-## Python Integration
+##  Dashboard
 
-The project integrates Python to extract and process SQL data.
+An interactive Streamlit dashboard provides:
 
-### Key Features
-- MySQL connection using `mysql-connector-python`
-- Data extraction into pandas DataFrames
-- Query execution directly from Python
+-  Revenue trend visualization  
+-  Top customers by spending  
+-  Product performance insights  
 
-This enables further data processing and visualization.
+---
+
+##  How to Run the Project
+
+### 1. Setup Database
+
+Open MySQL Workbench and run:
+
+```sql
+-- Run these files in order
+schema.sql
+data/sample_data.sql
