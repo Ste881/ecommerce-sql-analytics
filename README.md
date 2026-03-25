@@ -24,7 +24,7 @@ It demonstrates how raw transactional data can be transformed into actionable bu
 - **Matplotlib** → Data visualization
 
 ---
-
+```
 ##  Project Structure
 
 
@@ -54,6 +54,7 @@ ecommerce-sql-analytics/
 ├── schema.sql # Database schema
 └── README.md
 
+```
 
 ---
 
