@@ -61,3 +61,18 @@ The project includes multiple analytical queries to derive business insights:
 
 ### 4. Product Performance
 - Analyzed top-selling products based on quantity sold.
+
+## Advanced SQL Analysis
+
+To enhance analytical depth, advanced SQL techniques were implemented:
+
+### Cohort Analysis
+- Tracked customer retention over time by grouping users based on their first purchase month.
+
+### Window Functions
+- Ranked customers based on total spending using SQL window functions.
+
+### Running Totals
+- Calculated cumulative revenue to analyze growth trends over time.
+
+These techniques demonstrate deeper analytical capabilities commonly used in production data systems.

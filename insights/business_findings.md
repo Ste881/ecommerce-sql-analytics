@@ -12,3 +12,9 @@
 - Focus marketing on repeat customers
 - Promote high-performing products
 - Improve retention strategies for low-frequency users
+
+## Advanced Insights
+
+- Customer retention varies across cohorts, indicating differences in engagement.
+- A small subset of customers ranks highest in spending, highlighting high-value users.
+- Revenue shows cumulative growth over time, indicating steady business performance.
